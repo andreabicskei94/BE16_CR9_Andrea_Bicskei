@@ -20,4 +20,5 @@ SELECT product.name, product.price, `ordering`.`order_date`, `ordering`.`deliver
 /* subquery*/
 
 SELECT * FROM `product_set` WHERE `product_set`.`ID` in(SELECT p.fk_product_set_id from product p WHERE `product_set`.`ID` = 3);
-SELECT * FROM `product_set` WHERE `product_set`.`ID` in(SELECT p.fk_product_set_id from product p WHERE `product_set`.`ID` = 3);
+
+SELECT * FROM `ordering` WHERE `ordering`.`ID` in(SELECT c.fk_ordering_id from customer c WHERE `ordering`.`priceSum`>= 20);
